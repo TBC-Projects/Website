@@ -187,12 +187,14 @@ cbutton:hover, a:hover {
     margin-top: 0.5rem;
 }
 .ongoing {
-    background-color: #fdeed8;
+    background-color: #ffc369;
 }
 .completed {
-    background-color: #f1fdd8;
+    background-color: #d1f87c;
 }
-
+.in-service {
+    background-color: #afa5ef;
+}
 .scroll-container {
     width: 100%;
     height: 300px;
