@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -33,11 +34,16 @@ header {
         align-items: center;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .nav-links a {
         color: #e3cbff;
         text-decoration: none;
         margin-left: 1rem;
-        font-size:18px;
+    font-size: 18px;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -45,18 +51,362 @@ header {
         font-style: bold;
 }
 
-.logo {
-        font-size: 1.5rem;
-        font-weight: bold;
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
 }
 
-/* Main content */
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Courier Prime';
+    font-size: 128px;
+    font-weight: 600;
+    color: white;
+    margin-left: 5%;
+    white-space: nowrap;
+}
+
+/* Who are we Section */
+.who-are-we-section {
+    width: 100%;
+    aspect-ratio: 3/2;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.who-are-we-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.who-are-we-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.who-are-we-title {
+    font-family: 'Courier Prime';
+    font-size: 128px;
+    font-weight: 600;
+    color: white;
+}
+
+.who-are-we-description {
+    font-family: 'Lato';
+    font-size: 40px;
+    color: white;
+    margin-right: 10%;
+    margin-left: 30%;
+    text-align: right;
+    line-height: 1.2;
+}
+
+/* Projects Section */
+.projects-section {
+    background-color: #f1ebde;
+    padding: 2rem 0;
+}
+
+.projects-section h1 {
+    font-family: 'Courier Prime';
+    font-size: 128px;
+    color: #6b46c1;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out,
+        filter 0.3s ease-out,
+        box-shadow 0.3s ease-out;
+}
+
+.project-card h2 {
+    color: #6b46c1;
+    margin-bottom: 0.5rem;
+}
+
+.project-card:hover {
+    transform: scale(1.05) translateZ(0);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Image Slider */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slide-img.active {
+    opacity: 1;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e9d8fd;
+    color: #6b46c1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.status {
+    display: inline-block;
+    color: #6b46c1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ongoing {
+    background-color: #ffc369;
+}
+
+.completed {
+    background-color: #d1f87c;
+}
+
+.in-service {
+    background-color: #afa5ef;
+}
+
+.all-projects-btn-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.all-projects-btn {
+    display: inline-block;
+    background-color: #6b46c1;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-family: 'Lato';
+    font-size: 40px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.all-projects-btn:hover {
+    background-color: #553c9a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Explore Section */
+.explore-section {
+    background-color: white;
+    padding: 4rem 0;
+}
+
+.explore-title {
+    font-family: 'Courier Prime';
+    font-size: 96px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.engineering-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.engineering-card {
+    position: relative;
+    text-align: center;
+}
+
+.engineering-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.engineering-title {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'Courier Prime';
+    font-size: 40px;
+    color: white;
+}
+
+.explore-subtitle {
+    font-family: 'Courier Prime';
+    font-size: 64px;
+    color: #333;
+    text-align: right;
+    margin-top: 2rem;
+}
+
+/* Get Involved Section */
+.get-involved-section {
+    width: 100%;
+    aspect-ratio: 3/2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.get-involved-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.get-involved-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.get-involved-title {
+    font-family: 'Courier Prime';
+    font-size: 96px;
+    color: white;
+}
+
+.get-involved-btn-container {
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+
+.get-involved-btn {
+    display: inline-block;
+    background-color: #6b46c1;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-family: 'Lato';
+    font-size: 40px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.get-involved-btn:hover {
+    background-color: #553c9a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 main {
     padding: 2rem 0;
 }
 
-h1 {
-    font-size: 2.5rem;
+main h1 {
+    font-family: 'Courier Prime';
+    font-size: 4rem;
     color: #6b46c1;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -65,12 +415,6 @@ h1 {
 .intro {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
 }
 
 .card {
@@ -126,173 +470,7 @@ ul {
     background-color: #553c9a;
 }
 
-/* Project tags */
-.tag {
-    display: inline-block;
-    background-color: #e9d8fd;
-    color: #6b46c1;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .nav-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        margin: 0.5rem 1rem 0.5rem 0;
-    }
-}
-
-cbutton {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #9a95a6;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    margin-top: auto;
-    }
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-    }
-
-cbutton:hover, a:hover {
-    opacity: 0.7;
-}
-
-.status {
-    display: inline-block;
-    color: #6b46c1;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-.ongoing {
-    background-color: #ffc369;
-}
-.completed {
-    background-color: #d1f87c;
-}
-.in-service {
-    background-color: #afa5ef;
-}
-.scroll-container {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    position: relative;
-    border-radius: 1rem;
-  }
-  
-.scroll-slides {
-    display: flex;
-    width: 400%;
-    animation: scroll-slides 12s ease-in-out infinite;
-    animation-play-state: paused;
-}
-
-.scroll-slides img {
-    flex: 0 0 25%;
-    height: 300px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-.project-card {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-out,
-        filter 0.3s ease-out,
-        box-shadow 0.3s ease-out;
-}
-
-.project-card h2 {
-    color: #6b46c1;
-    margin-bottom: 0.5rem;
-}
-
-.project-card:hover .scroll-slides {
-    animation-play-state: running;
-}
-
-.project-card:hover {
-    transform: scale(1.05) translateZ(0);
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-@keyframes scroll-slides {
-    0%,  20%   { transform: translateX(   0%); }
-    25%, 45% { transform: translateX(-25%); }
-    50%, 70%   { transform: translateX(-50%); }
-    75%, 95%  { transform: translateX(-75%); }
-    100%       { transform: translateX(   0%); }
-}
-
-
-.slider {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Makes it responsive instead of fixed 600px */
-    overflow: hidden;
-    position: relative;
-}
-
-.slides {
-    display: flex;
-    width: 400%; /* keep this if you have 4 images */
-    height: 100%;
-    animation: slideAnimation 20s infinite;
-}
-
-.slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    flex: 0 0 25%; /* 4 images => 25% width each */
-}
-
-
-@keyframes slideAnimation {
-    0%,  20%  { transform: translateX(0    ); }
-    25%, 45%  { transform: translateX(-25% ); }
-    50%, 70%  { transform: translateX(-50% ); }
-    75%, 95%  { transform: translateX(-75% ); }
-    100%      { transform: translateX(0    ); }
-}
-
 /* Officer Profile */
-/* .profiles-grid {
-    display: grid;
-    gap: 2rem;
-    margin: 20px;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, 200px);
-    justify-content: center;
-} */
-
 .profiles-grid {
     display: flex;
     flex-wrap: wrap;
@@ -304,7 +482,6 @@ cbutton:hover, a:hover {
 
 .profile {
     flex: 0 0 200px;
-
     background-color: #fffaf2;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -317,6 +494,7 @@ cbutton:hover, a:hover {
         filter 0.3s ease-out,
         box-shadow 0.3s ease-out;
 }
+
 .profile:hover {
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
@@ -329,7 +507,6 @@ cbutton:hover, a:hover {
     margin-bottom: 0.5rem;
 }
   
-/* Name */
 .profile h2 {
     font-size: 1.25rem;
     margin: 0.25rem 0 0.25rem;
@@ -341,6 +518,7 @@ cbutton:hover, a:hover {
     color: #6b46c1;
     margin: 0.25rem 0;
 }
+
 .profile .major {
     font-size: 0.9rem;
     color: #333;
@@ -356,6 +534,147 @@ cbutton:hover, a:hover {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+
 .contact-button:hover {
     background-color: #553c9a;
+}
+
+/* Social Media Grid */
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design to handle when the window is resized smaller */
+@media (max-width: 1080px) {
+    .hero-section {
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .hero-title {
+        font-size: 80px;
+    }
+    
+    .who-are-we-title {
+        font-size: 80px;
+    }
+    
+    .who-are-we-description {
+        font-size: 28px;
+    }
+    
+    .projects-section h1 {
+        font-size: 80px;
+    }
+    
+    .explore-title {
+        font-size: 64px;
+    }
+    
+    .explore-subtitle {
+        font-size: 48px;
+    }
+    
+    .engineering-title {
+        font-size: 36px;
+    }
+    
+    .engineering-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .get-involved-title {
+        font-size: 64px;
+    }
+    
+    .get-involved-btn {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 0.5rem 1rem 0.5rem 0;
+    }
+    
+    .hero-title {
+        font-size: 60px;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .who-are-we-section {
+        min-height: 60vh;
+    }
+    
+    .who-are-we-title {
+        font-size: 60px;
+    }
+    
+    .who-are-we-description {
+        font-size: 16px;
+        margin-right: 5%;
+    }
+    
+    .who-are-we-content {
+        padding: 1rem;
+    }
+    
+    .projects-section h1 {
+        font-size: 60px;
+    }
+    
+    .explore-title {
+        font-size: 48px;
+    }
+    
+    .explore-subtitle {
+        font-size: 36px;
+    }
+    
+    .engineering-title {
+        font-size: 28px;
+    }
+    
+    .engineering-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .engineering-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .get-involved-title {
+        font-size: 48px;
+    }
+    
+    .get-involved-btn {
+        font-size: 20px;
+    }
+    
+    .get-involved-content {
+        padding: 1rem;
+    }
+    
+    .social-media-grid {
+        grid-template-columns: 1fr;
+    }
 }
