@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -26,119 +24,66 @@
             </div>
         </nav>
     </header>
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <img src="Images/tabling.jpg" alt="Landing page hero image" class="hero-background">
-        <div class="hero-content">
-            <h1 class="hero-title">Welcome to</h1>
-        </div>
-    </section>
-    
-    <!-- Who are we Section -->
-    <section class="who-are-we-section">
-        <img src="Images/beginnings.jpg" alt="The Boring Club members at work" class="who-are-we-background">
-        <div class="who-are-we-content">
-            <h2 class="who-are-we-title"><span class='black-highlight'>Who are we?</span></h2>
-            <p class="who-are-we-description"><span class='black-highlight'>We are an engineering project club!<br>We help UW students build the engineering skills they are passionate about with hands-on learning in a relaxed environment.</span></p>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="container">
-            <h1>Projects</h1>
-            <div class="grid">
-                <div class="project-card">
-                    <h2>Raspberry Pi Server</h2>
-                    <div class="image-slider">
-                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                        <div class="slider-container">
-                            <div class="slider-track">
-                                <img class="slide-img active" src="Images/raspberrypiSetup.jpg" alt="Raspberry Pi Setup">
-                                <img class="slide-img" src="Images/BoringClubWebsite.jpg" alt="Boring Club Website">
-                            </div>
-                        </div>
-                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                    </div>
-                    <p>The infrastructure behind this website! This project involves four teams—Hardware, Firmware, 
-                        Cybersecurity, and WebDev—collaborating to deploy a full-stack web server hosted on Raspberry Pi hardware.</p>
-                    <span class="tag">2025</span>
-                    <span class="status in-service">In-Service</span>
-                </div>
-                <div class="project-card">
-                    <h2>Mini Motorboat Project</h2>
-                    <div class="image-slider">
-                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                        <div class="slider-container">
-                            <div class="slider-track">
-                                <img class="slide-img active" src="Images/motorboat.jpg" alt="Motorboat">
-                                <img class="slide-img" src="Images/propellorTestMotorboat.jpg" alt="Propeller Test">
-                                <img class="slide-img" src="Images/groupHuddleMotorboat.jpg" alt="Group Huddle">
-                                <img class="slide-img" src="Images/propellorDiagramMotorboat.jpg" alt="Propeller Diagram">
-                            </div>
-                        </div>
-                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                    </div>
-                    <p>A collaborative build of a wireless-controlled motorboat. Mechanical team led chassis design and CFD analysis, 
-                        while the electrical team built the ESP32-based wireless control system. A multidisciplinary project merging fluid dynamics and electronics.</p>
-                    <span class="tag">2024</span>
-                    <span class="status ongoing">Ongoing</span>
-                </div>
-                <div class="project-card">
-                    <h2>High Frequency Trading (HFT) Accelerator</h2>
-                    <div class="image-slider">
-                        <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                        <div class="slider-container">
-                            <div class="slider-track">
-                                <img class="slide-img active" src="Images/image3.png" alt="HFT Project">
-                            </div>
-                        </div>
-                        <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                    </div>
-                    <p>An ambitious project combining FPGA hardware acceleration and Python scripting to create a 
-                        platform for high-frequency trading simulations and research. Focuses on low-latency systems and financial computing.</p>
-                    <span class="tag">2025</span>
-                    <span class="status ongoing">Ongoing</span>
-                </div>
-            </div>
-            <div class="all-projects-btn-container">
-                <a href="projects.html" class="all-projects-btn">All Projects</a>
+    <main class="container">
+        <div class="slider">
+            <div class="slides">
+              <img src="Images/tabling.jpg" alt="First picture in Home Page">
+              <img src="Images/beginnings.jpg" alt="Second picture in Home Page">
+              <img src="Images/mogging.jpg" alt="Third picture in Home Page">
+              <img src="Images/bakeSale.png" alt="Fourth picture in Home Page">
             </div>
         </div>
-    </section>
-    
-    <!-- Explore Section -->
-    <section class="explore-section">
-        <div class="container">
-            <h2 class="explore-title">You can explore</h2>
-            <div class="engineering-grid">
-                <div class="engineering-card">
-                    <img src="Images/propellorTestMotorboat.jpg" alt="Mechanical Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Mechanical Engineering</span></h4>
-                </div>
-                <div class="engineering-card">
-                    <img src="Images/carcontrol.jpg" alt="Electrical Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Electrical Engineering</span></h4>
-                </div>
-                <div class="engineering-card">
-                    <img src="Images/gitDemo.png" alt="Computer Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Computer Engineering</span></h4>
-                </div>
+        <h1>Welcome to The Boring Club!</h1>
+        <p class="intro">
+            We are an engineering project club! We help UW students build the engineering skills they are passionate about with hands-on learning in a relaxed environment.
+        </p>
+        <h1>Projects</h1>
+        <div class="grid">
+            <div class="project-card">
+                <h2>Raspberry Pi Server</h2>
+                <div class="scroll-container">
+                    <div class="scroll-slides">
+                        <img class="img" src="Images/raspberrypiSetup.jpg" alt="First Picture for Project">
+                        <img class="img" src="Images/BoringClubWebsite.jpg" alt="Second Picture for Project">
+                        <img class="img" src="Images/raspberrypiSetup.jpg" alt="Third Picture for Project">
+                        <img class="img" src="Images/BoringClubWebsite.jpg" alt="Fourth Picture for Project">
+                      </div>
+                  </div>
+                <p>The infrastructure behind this website! This project involves four teams—Hardware, Firmware, 
+                    Cybersecurity, and WebDev—collaborating to deploy a full-stack web server hosted on Raspberry Pi hardware.</p>
+                <span class="tag">2025</span>
+                <span class="status in-service">In-Service</span>
             </div>
-            <h3 class="explore-subtitle">and many more!</h3>
-        </div>
-    </section>
-    
-    <!-- Get Involved Section -->
-    <section class="get-involved-section">
-        <img src="Images/bakeSale.png" alt="Bake sale event" class="get-involved-background">
-        <div class="get-involved-content">
-            <h2 class="get-involved-title"><span class='black-highlight'>Want to get involved?</span></h2>
-            <div class="get-involved-btn-container">
-                <a href="started.html" class="get-involved-btn">Get Started</a>
+            <div class="project-card">
+                <h2>Mini Motorboat Project</h2>
+                <div class="scroll-container">
+                    <div class="scroll-slides">
+                        <img class="img" src="Images/motorboat.jpg" alt="First Picture for Project">
+                        <img class="img" src="Images/propellorTestMotorboat.jpg" alt="Second Picture for Project">
+                        <img class="img" src="Images/groupHuddleMotorboat.jpg" alt="Third Picture for Project">
+                        <img class="img" src="Images/propellorDiagramMotorboat.jpg" alt="Fourth Picture for Project">
+                      </div>
+                  </div>
+                <p>A collaborative build of a wireless-controlled motorboat. Mechanical team led chassis design and CFD analysis, 
+                    while the electrical team built the ESP32-based wireless control system. A multidisciplinary project merging fluid dynamics and electronics.</p>
+                <span class="tag">2024</span>
+                <span class="status ongoing">Ongoing</span>
             </div>
-        </div>
-    </section>
+            <div class="project-card">
+                <h2>High Frequency Trading (HFT) Accelerator</h2>
+                <div class="scroll-container">
+                    <div class="scroll-slides">
+                        <img class="img" src="Images/image3.png" alt="First Picture for Project">
+                        <img class="img" src="Images/image3.png" alt="Second Picture for Project">
+                        <img class="img" src="Images/image3.png" alt="Third Picture for Project">
+                        <img class="img" src="Images/image3.png" alt="Fourth Picture for Project">
+                      </div>
+                  </div>
+                <p>An ambitious project combining FPGA hardware acceleration and Python scripting to create a 
+                    platform for high-frequency trading simulations and research. Focuses on low-latency systems and financial computing.</p>
+                <span class="tag">2025</span>
+                <span class="status ongoing">Ongoing</span>
+            </div>
+    </main>
 </body>
 </html>
