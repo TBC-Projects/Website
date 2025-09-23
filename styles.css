@@ -560,6 +560,11 @@ ul {
     margin-bottom: 2rem;
 }
 
+.black-highlight {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+}
+
 /* Responsive Design to handle when the window is resized smaller */
 @media (max-width: 1080px) {
     .hero-section {
