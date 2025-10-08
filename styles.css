@@ -359,3 +359,18 @@ cbutton:hover, a:hover {
 .contact-button:hover {
     background-color: #553c9a;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  font-weight: 600;
+}
