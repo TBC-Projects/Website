@@ -116,13 +116,13 @@ header {
     font-family: 'Courier Prime';
     font-size: 96px;
     font-weight: 600;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .who-are-we-description {
     font-family: 'Lato';
     font-size: 30px;
-    color: rgb(0, 0, 0);
+    color: white;
     margin-right: 20%;
     margin-left: 20%;
     text-align: center;
@@ -385,13 +385,14 @@ header {
 
 .get-involved-title {
     font-family: 'Courier Prime';
-    font-size: 96px;
-    color: white;
+    font-size: 84px;
+    color: black;
+    margin-top: 3rem;
 }
 
 .get-involved-btn-container {
-    margin-top: auto;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: auto;
 }
 
 .get-involved-btn {
@@ -568,10 +569,10 @@ ul {
 
 .black-highlight {
     text-shadow: 
-        -1px -1px 0 rgb(147, 147, 147),
-        1px -1px 0 rgb(147, 147, 147),
-        -1px 1px 0 rgb(147, 147, 147),
-        1px 1px 0 rgb(147, 147, 147);
+        /* -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black, */
+        3px 3px 0 black;
     padding: 0 10px;
 }
 
@@ -826,8 +827,8 @@ ul {
     }
     
     .engineering-img {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
     
     .get-involved-title {
