@@ -40,15 +40,15 @@ header {
 }
 
 .nav-links a {
-        color: #e3cbff;
-        text-decoration: none;
-        margin-left: 1rem;
+    color: #e3cbff;
+    text-decoration: none;
+    margin-left: 1rem;
     font-size: 18px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-        color: #fff;
-        font-style: bold;
+    color: #fff;
+    font-style: bold;
 }
 
 /* Hero Section */
@@ -116,16 +116,16 @@ header {
     font-family: 'Courier Prime';
     font-size: 96px;
     font-weight: 600;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .who-are-we-description {
     font-family: 'Lato';
-    font-size: 40px;
-    color: white;
-    margin-right: 10%;
-    margin-left: 30%;
-    text-align: right;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    margin-right: 20%;
+    margin-left: 20%;
+    text-align: center;
     line-height: 1.2;
 }
 
@@ -567,7 +567,11 @@ ul {
 }
 
 .black-highlight {
-    background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 
+        -1px -1px 0 rgb(147, 147, 147),
+        1px -1px 0 rgb(147, 147, 147),
+        -1px 1px 0 rgb(147, 147, 147),
+        1px 1px 0 rgb(147, 147, 147);
     padding: 0 10px;
 }
 
