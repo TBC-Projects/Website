@@ -7,7 +7,31 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+        function changeSlide(button, direction) {
+            const slider = button.closest('.image-slider');
+            const track = slider.querySelector('.slider-track');
+            const images = track.querySelectorAll('.slide-img');
+            const currentActive = track.querySelector('.slide-img.active');
+            
+            let currentIndex = Array.from(images).indexOf(currentActive);
+            let nextIndex = currentIndex + direction;
+            
+            // Handle wrapping
+            if (nextIndex >= images.length) {
+                nextIndex = 0;
+            } else if (nextIndex < 0) {
+                nextIndex = images.length - 1;
+            }
+            
+            // Update active class
+            currentActive.classList.remove('active');
+            images[nextIndex].classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -24,95 +48,159 @@
             </div>
         </nav>
     </header>
+    
     <main class="container">
         <h1>Projects</h1>
         <p class="intro">Explore some of the exciting projects our members are currently working on.</p>
         <div class="grid">
+
+            <!-- Facial Recognition Attendance Checker Project Card -->
             <div class="project-card">
-                <h2>Raspberry Pi Server</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/raspberrypiSetup.jpg" alt="First Picture for Project">
-                        <img class="img" src="Images/BoringClubWebsite.jpg" alt="Second Picture for Project">
-                        <img class="img" src="Images/raspberrypiSetup.jpg" alt="Third Picture for Project">
-                        <img class="img" src="Images/BoringClubWebsite.jpg" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
-                <p>The infrastructure behind this website! This project involves four teams—Hardware, Firmware, 
-                    Cybersecurity, and WebDev—collaborating to deploy a full-stack web server hosted on Raspberry Pi hardware.</p>
+                <h2>Facial Recognition Attendance Checker</h2>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/ML_meeting.jpeg" alt="ML Meeting">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
+                <p>A full stack embedded system project that scans a person's face in real-time and uses a ML 
+                    classification model to match the face to the member of the club, marking the person as present.</p>
                 <span class="tag">2025</span>
-                <span class="status in-service">In-Service</span>
-            </div>
-            <div class="project-card">
-                <h2>Mini Motorboat Project</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/motorboat.jpg" alt="First Picture for Project">
-                        <img class="img" src="Images/propellorTestMotorboat.jpg" alt="Second Picture for Project">
-                        <img class="img" src="Images/groupHuddleMotorboat.jpg" alt="Third Picture for Project">
-                        <img class="img" src="Images/propellorDiagramMotorboat.jpg" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
-                <p>A collaborative build of a wireless-controlled motorboat. Mechanical team led chassis design and CFD analysis, 
-                    while the electrical team built the ESP32-based wireless control system. A multidisciplinary project merging fluid dynamics and electronics.</p>
-                <span class="tag">2024</span>
                 <span class="status ongoing">Ongoing</span>
             </div>
+
+            <!-- CO2 Car Project Card -->
+            <div class="project-card">
+                <h2>CO2 Cars Racing</h2>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/image3.png" alt="Picture">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
+                <p>CO2 Cars Racing with the Boring Club! An exciting project where teams work together to make cars and race by the end of the quarter.</p>
+                <span class="tag">2025</span>
+                <span class="status ongoing">Ongoing</span>
+            </div>
+
+            <!-- HFT Trading Project Card -->
             <div class="project-card">
                 <h2>High Frequency Trading (HFT) Accelerator</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/image3.png" alt="First Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Second Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Third Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/HFT_board.jpg" alt="HFT board">
+                            <img class="slide-img active" src="Images/HFT_meeting.jpg" alt="HFT meeting">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>An ambitious project combining FPGA hardware acceleration and Python scripting to create a 
                     platform for high-frequency trading simulations and research. Focuses on low-latency systems and financial computing.</p>
                 <span class="tag">2025</span>
                 <span class="status ongoing">Ongoing</span>
             </div>
+
+            <!-- Raspberry Pi Project Card -->
+            <div class="project-card">
+                <h2>Raspberry Pi Server</h2>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/raspberrypiSetup.jpg" alt="Raspberry Pi Setup">
+                            <img class="slide-img" src="Images/BoringClubWebsite.jpg" alt="Boring Club Website">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
+                <p>The infrastructure behind this website! This project involves four teams—Hardware, Firmware, 
+                    Cybersecurity, and WebDev—collaborating to deploy a full-stack web server hosted on Raspberry Pi hardware.</p>
+                <span class="tag">2025</span>
+                <span class="status in-service">In-Service</span>
+            </div>
+
+            <!-- Mini Motorboat Project Card -->
+            <div class="project-card">
+                <h2>Mini Motorboat Project</h2>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/motorboat.jpg" alt="Motorboat">
+                            <img class="slide-img" src="Images/propellorTestMotorboat.jpg" alt="Propeller Test">
+                            <img class="slide-img" src="Images/groupHuddleMotorboat.jpg" alt="Group Huddle">
+                            <img class="slide-img" src="Images/propellorDiagramMotorboat.jpg" alt="Propeller Diagram">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
+                <p>A collaborative build of a wireless-controlled motorboat. Mechanical team led chassis design and CFD analysis, 
+                    while the electrical team built the ESP32-based wireless control system. A multidisciplinary project merging fluid dynamics and electronics.</p>
+                <span class="tag">2024</span>
+                <span class="status completed">Completed</span>
+            </div>
+
+            <!-- FGPA Traffic Light Controller -->
             <div class="project-card">
                 <h2>FGPA Traffic Light Controller</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/trafficLight.png" alt="First Picture for Project">
-                        <img class="img" src="Images/fpgaFSM.jpg" alt="Second Picture for Project">
-                        <img class="img" src="Images/fpgaBoard.png" alt="Third Picture for Project">
-                        <img class="img" src="Images/intersectionSV.png" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/trafficLight.png" alt="Traffic Light">
+                            <img class="slide-img" src="Images/fpgaFSM.jpg" alt="FPGA FSM">
+                            <img class="slide-img" src="Images/fpgaBoard.png" alt="FPGA Board">
+                            <img class="slide-img" src="Images/intersectionSV.png" alt="Intersection SystemVerilog">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>Designed on the DE1-SoC platform, this FPGA project uses SystemVerilog to manage a traffic intersection. 
                     It demonstrates hardware design with sequential and combinational logic prioritizing a main highway over a rural road.</p>
                 <span class="tag">2024</span>
                 <span class="status completed">Completed</span>
             </div>
+
+            <!-- UW GPT -->
             <div class="project-card">
                 <h2>UW GPT Chatbot</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/image3.png" alt="First Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Second Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Third Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/image3.png" alt="UW GPT Chatbot">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>A custom-trained GPT chatbot that uses University of Washington APIs to provide insightful responses about courses, 
                     majors, and student life. Features include course averages, graduation requirements, and academic advice.</p>
                 <span class="tag">2024</span>
                 <span class="status completed">Completed</span>
             </div>
+
+            <!-- TBC Git Initiative Project Card -->
             <div class="project-card">
                 <h2>The Boring Club Git Initiative</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/gitDemo.png" alt="First Picture for Project">
-                        <img class="img" src="Images/gitSS.png" alt="Second Picture for Project">
-                        <img class="img" src="Images/gitModule.png" alt="Third Picture for Project">
-                        <img class="img" src="Images/image3.png" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/gitDemo.png" alt="Git Demo">
+                            <img class="slide-img" src="Images/gitSS.png" alt="Git Screenshot">
+                            <img class="slide-img" src="Images/gitModule.png" alt="Git Module">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>Established a GitHub organization for the club, complete with repositories and structured learning materials. 
                     Concluded with an all-club hands-on workshop on Git, enhancing collaboration and professional workflows. 
                     Utilized Bash scripting for demonstrations.
@@ -120,32 +208,42 @@
                 <span class="tag">2024</span>
                 <span class="status completed">Completed</span>
             </div>
+
+            <!-- Remote Controller Car Project Card -->
             <div class="project-card">
                 <h2>Remote-Controlled Car</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/rcCar.jpg" alt="First Picture for Project">
-                        <img class="img" src="Images/carcontrol.jpg" alt="Second Picture for Project">
-                        <img class="img" src="Images/rcCar.jpg" alt="Third Picture for Project">
-                        <img class="img" src="Images/carcontrol.jpg" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/rcCar.jpg" alt="RC Car">
+                            <img class="slide-img" src="Images/carcontrol.jpg" alt="Car Control">
+                            <img class="slide-img" src="Images/rcCar.jpg" alt="RC Car">
+                            <img class="slide-img" src="Images/carcontrol.jpg" alt="Car Control">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>An Arduino-based, 3D-printed RC car built from scratch. Members gained hands-on experience in electronics, 
                     mechanical design, and control systems using Arduino C.
                 </p>
                 <span class="tag">2023</span>
                 <span class="status completed">Completed</span>
             </div>
+
+            <!-- Arduino Project Card -->
             <div class="project-card">
                 <h2>Arduino Projects Collection</h2>
-                <div class="scroll-container">
-                    <div class="scroll-slides">
-                        <img class="img" src="Images/earlyArduino.jpg" alt="First Picture for Project">
-                        <img class="img" src="Images/earlyarduino2.jpg" alt="Second Picture for Project">
-                        <img class="img" src="Images/earlyArduino.jpg" alt="Third Picture for Project">
-                        <img class="img" src="Images/earlyarduino2.jpg" alt="Fourth Picture for Project">
-                      </div>
-                  </div>
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <img class="slide-img active" src="Images/earlyArduino.jpg" alt="Early Arduino">
+                            <img class="slide-img" src="Images/earlyarduino2.jpg" alt="Early Arduino 2">
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
+                </div>
                 <p>A creative set of electronics mini-projects including a digital piano, a light theremin, and a buzzer reaction 
                     game using Raspberry Pi Pico. These projects introduced members to embedded systems using Arduino C and MicroPython.
                 </p>
