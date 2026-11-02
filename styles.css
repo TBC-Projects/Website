@@ -129,6 +129,13 @@ header {
     line-height: 1.2;
 }
 
+.who-are-we-description .purple-highlight {
+    background-color: #553c9a;
+    padding: 0 10px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
 /* Projects Section */
 .projects-section {
     background-color: #f1ebde;
