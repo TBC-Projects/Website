@@ -10,28 +10,6 @@
     <link rel="icon" href="Images/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script>
-        function changeSlide(button, direction) {
-            const slider = button.closest('.image-slider');
-            const track = slider.querySelector('.slider-track');
-            const images = track.querySelectorAll('.slide-img');
-            const currentActive = track.querySelector('.slide-img.active');
-            
-            let currentIndex = Array.from(images).indexOf(currentActive);
-            let nextIndex = currentIndex + direction;
-            
-            // Handle wrapping
-            if (nextIndex >= images.length) {
-                nextIndex = 0;
-            } else if (nextIndex < 0) {
-                nextIndex = images.length - 1;
-            }
-            
-            // Update active class
-            currentActive.classList.remove('active');
-            images[nextIndex].classList.add('active');
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -48,86 +26,50 @@
             </div>
         </nav>
     </header>
-    
-    <!-- Hero Section -->
+
     <section class="hero-section">
-        <img src="Images/TBC_cover.jpg" alt="Landing page hero image" class="hero-background">
+        <img src="Images/TBC_cover.jpg" alt="The Boring Club" class="hero-background">
     </section>
-    
-    <!-- Who are we Section -->
+
     <section class="who-are-we-section">
         <img src="Images/tabling.jpg" alt="The Boring Club members at work" class="who-are-we-background">
         <div class="who-are-we-content">
-            <h2 class="who-are-we-title"><span class='black-highlight'>Who are we?</span></h2>
-            <p class="who-are-we-description"><span class='black-highlight'>We are an engineering project club!<br>We help UW students build the engineering skills they are passionate about with hands-on learning in a relaxed environment.</span></p>
+            <h2 class="who-are-we-title"><span class="black-highlight">Who are we?</span></h2>
+            <p class="who-are-we-description"><span class="purple-highlight">We are an engineering project club!<br>We help UW students build the engineering skills they are passionate about with hands-on learning in a relaxed environment.</span></p>
         </div>
     </section>
-    
-    <!-- Projects Section -->
-    <section class="projects-section">
+
+    <section class="projects-section" id="projects">
         <div class="container">
             <h1>Current Projects</h1>
             <div class="grid">
-            <!-- Siege Devices Project Card -->
             <div class="project-card">
-                <h2>Siege Devices</h2>
-                <div class="image-slider">
-                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                    <div class="slider-container">
-                        <div class="slider-track">
-                            <img class="slide-img active" src="Images/siege.png" alt="siege device">
-                        </div>
-                    </div>
-                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                </div>
-                <p>3D design and manufacturing of miniature siege devices.</p>
+                <h2>Stirling Engine</h2>
+                <img class="project-photo" src="Images/stirling-engine-placeholder.jpg" alt="Placeholder photo of a homemade Stirling engine">
+                <p>An engine-powered car project: refine a Stirling engine in quarter one while taking a relevant course, then assemble the car in quarters two and three.</p>
+                <p class="photo-credit"><small>Placeholder photo: <a href="https://commons.wikimedia.org/wiki/File:HPS_Eigenbau2.jpg">Pedro Servera</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> (unchanged).</small></p>
                 <span class="tag">2026</span>
                 <span class="status ongoing">Ongoing</span>
             </div>
-            <!-- Analog Theremin Project Card -->
             <div class="project-card">
-                <h2>Analog Theremin</h2>
-                <div class="image-slider">
-                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                    <div class="slider-container">
-                        <div class="slider-track">
-                            <img class="slide-img active" src="Images/theremin.jpg" alt="theremin">
-                        </div>
-                    </div>
-                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                </div>
-                <p>An analog circuit that replicates the functionality of a musical theremin.</p>
+                <h2>Robotic Arm</h2>
+                <img class="project-photo" src="Images/robotic-arm-placeholder.png" alt="Placeholder photo of a desktop robotic arm">
+                <p>A robotic arm project using the SO101 from Lee Robot, combining embedded systems, 3D modeling, and machine learning.</p>
+                <p class="photo-credit"><small>Placeholder photo: <a href="https://commons.wikimedia.org/wiki/File:Dobot-_A_Robot_arm.png">DangerAlpha</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>.</small></p>
                 <span class="tag">2026</span>
                 <span class="status ongoing">Ongoing</span>
             </div>
-           <!-- Graphics Architecture Project Card -->
             <div class="project-card">
-                <h2>Graphics Architecture</h2>
-                <div class="image-slider">
-                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                    <div class="slider-container">
-                        <div class="slider-track">
-                            <img class="slide-img active" src="Images/gpustock.jpg" alt="GPU">
-                        </div>
-                    </div>
-                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                </div>
-                <p>A digital system design project to architect a Graphical Processing Unit (GPU).</p>
+                <h2>AI Embedded HIL</h2>
+                <img class="project-photo" src="Images/embedded-hil-placeholder.jpg" alt="Placeholder photo of an Arduino development board and breadboard">
+                <p>An AI Embedded Hardware-in-the-Loop platform where distributed AI agents autonomously write bare-metal embedded C and verify it on physical hardware. Execution data helps agents diagnose timing mismatches, fix software panics, and refactor code until all validation criteria are met.</p>
+                <p class="photo-credit"><small>Placeholder photo: <a href="https://unsplash.com/photos/an-electronic-device-with-a-micro-board-attached-to-it-3d2AY-7uyoI">Vishnu Mohanan</a>, <a href="https://unsplash.com/license">Unsplash License</a>.</small></p>
                 <span class="tag">2026</span>
                 <span class="status ongoing">Ongoing</span>
             </div>
-            <!-- LIDAR Maze Project Card -->
             <div class="project-card">
                 <h2>LIDAR Maze Solver</h2>
-                <div class="image-slider">
-                    <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">‹</button>
-                    <div class="slider-container">
-                        <div class="slider-track">
-                            <img class="slide-img active" src="Images/Lidar.png" alt="Lidar">
-                        </div>
-                    </div>
-                    <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">›</button>
-                </div>
+                <img class="project-photo" src="Images/Lidar.png" alt="Lidar">
                 <p>A digital ground vehicle control system with an FPGA power algorithm designed to solve mazes.</p>
                 <span class="tag">2026</span>
                 <span class="status ongoing">Ongoing</span>
@@ -138,38 +80,43 @@
             </div>
         </div>
     </section>
-    
-    <!-- Explore Section -->
+
     <section class="explore-section">
         <div class="container">
             <h2 class="explore-title">You can explore</h2>
             <div class="engineering-grid">
                 <div class="engineering-card">
                     <img src="Images/propellorTestMotorboat.jpg" alt="Mechanical Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Mechanical Engineering</span></h4>
+                    <h4 class="engineering-title"><span class="black-highlight">Mechanical<br>Engineering</span></h4>
                 </div>
                 <div class="engineering-card">
                     <img src="Images/carcontrol.jpg" alt="Electrical Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Electrical Engineering</span></h4>
+                    <h4 class="engineering-title"><span class="black-highlight">Electrical<br>Engineering</span></h4>
                 </div>
                 <div class="engineering-card">
                     <img src="Images/gitDemo.png" alt="Computer Engineering" class="engineering-img">
-                    <h4 class="engineering-title"><span class='black-highlight'>Computer Engineering</span></h4>
+                    <h4 class="engineering-title"><span class="black-highlight">Computer<br>Engineering</span></h4>
                 </div>
             </div>
             <h3 class="explore-subtitle">and many more!</h3>
         </div>
     </section>
-    
-    <!-- Get Involved Section -->
+
     <section class="get-involved-section">
-        <img src="Images/beginnings.jpg" alt="Bake sale event" class="get-involved-background">
+        <img src="Images/beginnings.jpg" alt="Club members at an early meeting" class="get-involved-background">
         <div class="get-involved-content">
-            <h2 class="get-involved-title">Want to get involved?</span></h2>
+            <h2 class="get-involved-title">Want to get involved?</h2>
             <div class="get-involved-btn-container">
                 <a href="started.html" class="get-involved-btn">Get Started</a>
             </div>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>The Boring Club at the University of Washington</p>
+            <a href="mailto:theboringclub@uw.edu">theboringclub@uw.edu</a>
+        </div>
+    </footer>
 </body>
 </html>
