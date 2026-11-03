@@ -26,6 +26,10 @@ header {
     color: #fff;
     padding: 1rem 0;
     font-family: "Lato";
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .nav-content {
@@ -48,41 +52,28 @@ header {
 
 .nav-links a:hover, .nav-links a.active {
     color: #fff;
-    font-style: bold;
+    font-weight: 700;
+    border-bottom: 2px solid #e3cbff;
 }
 
 /* Hero Section */
 .hero-section {
     width: 100%;
-    aspect-ratio: 16/9;
+    height: 100svh;
+    min-height: 100svh;
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     overflow: hidden;
+    background-color: #f1ebde;
 }
 
 .hero-background {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
-}
-
-.hero-content {
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-title {
-    font-family: 'Courier Prime';
-    font-size: 96px;
-    font-weight: 600;
-    color: white;
-    margin-left: 5%;
-    white-space: nowrap;
+    object-position: center;
+    display: block;
 }
 
 /* Who are we Section */
@@ -94,6 +85,15 @@ header {
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+}
+
+.who-are-we-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(34, 17, 74, 0.72) 0%, rgba(34, 17, 74, 0.28) 34%, rgba(34, 17, 74, 0.05) 58%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .who-are-we-background {
@@ -114,9 +114,10 @@ header {
 
 .who-are-we-title {
     font-family: 'Courier Prime';
-    font-size: 96px;
+    font-size: clamp(2.8rem, 7vw, 5.25rem);
     font-weight: 600;
     color: white;
+    margin-top: 1.5rem;
 }
 
 .who-are-we-description {
@@ -144,10 +145,11 @@ header {
 
 .projects-section h1 {
     font-family: 'Courier Prime';
-    font-size: 96px;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
     color: #6b46c1;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.05;
 }
 
 .grid {
@@ -159,13 +161,34 @@ header {
 .project-card {
     background-color: #fff;
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.85rem;
+    border-top: 4px solid #6b46c1;
+    box-shadow: 0 8px 22px rgba(34, 17, 74, 0.08);
     margin-bottom: 25px;
     box-sizing: border-box;
     transition: transform 0.3s ease-out,
         filter 0.3s ease-out,
         box-shadow 0.3s ease-out;
+}
+
+.project-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.75rem;
+    margin: 0.75rem 0 1rem;
+    background-color: #efe8dc;
+}
+
+.photo-credit {
+    color: #6d6578;
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+}
+
+.image-slider:not(:has(.slide-img ~ .slide-img)) .slider-btn {
+    display: none;
 }
 
 .project-card h2 {
@@ -306,54 +329,75 @@ header {
 
 .explore-title {
     font-family: 'Courier Prime';
-    font-size: 96px;
-    color: #333;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    color: #22114a;
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.05;
 }
 
 .engineering-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
 }
 
 .engineering-card {
     position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     text-align: center;
-    display: inline-block;
-    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(34, 17, 74, 0.14);
+}
+
+.engineering-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 48%, rgba(34, 17, 74, 0.78));
+    pointer-events: none;
 }
 
 .engineering-img {
-    width: 300px;
-    height: 300px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .engineering-title {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: 1rem;
+    z-index: 1;
+    margin: 0;
     font-family: 'Courier Prime';
-    font-size: 40px;
+    font-size: clamp(2rem, 3.4vw, 3rem);
     color: white;
-    padding: 0 8px;
+    padding: 0 0.75rem;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
     text-align: center;
     white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    line-height: 1.1;
+    overflow-wrap: normal;
+    word-break: normal;
+    line-height: 1.05;
+}
+
+.engineering-title .black-highlight {
+    padding: 0 0.15rem;
 }
 
 .explore-subtitle {
     font-family: 'Courier Prime';
-    font-size: 64px;
-    color: #333;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #22114a;
     text-align: right;
     margin-top: 2rem;
 }
@@ -367,6 +411,15 @@ header {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.get-involved-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(241, 235, 222, 0.82) 0%, rgba(241, 235, 222, 0.2) 36%, rgba(34, 17, 74, 0.18) 100%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .get-involved-background {
@@ -392,9 +445,13 @@ header {
 
 .get-involved-title {
     font-family: 'Courier Prime';
-    font-size: 84px;
-    color: black;
-    margin-top: 3rem;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    color: #22114a;
+    margin-top: 2.5rem;
+    background: rgba(241, 235, 222, 0.92);
+    display: inline-block;
+    padding: 0.15rem 0.8rem;
+    border-radius: 0.4rem;
 }
 
 .get-involved-btn-container {
@@ -575,56 +632,44 @@ ul {
 }
 
 .black-highlight {
-    text-shadow: 
-        /* -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black, */
+    text-shadow:
         3px 3px 0 black;
     padding: 0 10px;
 }
 
+.site-footer {
+    background-color: #22114a;
+    color: #f1ebde;
+    padding: 1.75rem 0;
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 0.35rem;
+}
+
+.site-footer a {
+    color: #e3cbff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
 /* Responsive Design to handle when the window is resized smaller */
 @media (max-width: 1080px) {
-    .hero-section {
-        height: auto;
-        min-height: 60vh;
-    }
-    
-    .hero-title {
-        font-size: 80px;
-    }
-    
-    .who-are-we-title {
-        font-size: 80px;
-    }
-    
     .who-are-we-description {
-        font-size: 28px;
-    }
-    
-    .projects-section h1 {
-        font-size: 80px;
-    }
-    
-    .explore-title {
-        font-size: 64px;
-    }
-    
-    .explore-subtitle {
-        font-size: 48px;
+        font-size: 1.35rem;
     }
     
     .engineering-title {
-        font-size: 36px;
-    }
-    
-    .engineering-img {
-        width: 250px;
-        height: 250px;
+        font-size: 2rem;
     }
     
     .get-involved-title {
-        font-size: 64px;
+        font-size: clamp(2.2rem, 6vw, 3.4rem);
     }
     
     .get-involved-btn {
@@ -646,56 +691,34 @@ ul {
         display: inline-block;
         margin: 0.5rem 1rem 0.5rem 0;
     }
-    
-    .hero-title {
-        font-size: 60px;
-    }
-    
-    .hero-content {
-        padding: 1rem;
+
+    .hero-background {
+        object-fit: contain;
     }
     
     .who-are-we-section {
         min-height: 60vh;
     }
     
-    .who-are-we-title {
-        font-size: 60px;
-    }
-    
     .who-are-we-description {
-        font-size: 16px;
-        margin-right: 5%;
+        font-size: 1.05rem;
+        margin-left: 8%;
+        margin-right: 8%;
     }
     
     .who-are-we-content {
         padding: 1rem;
     }
     
-    .projects-section h1 {
-        font-size: 60px;
-    }
-    
-    .explore-title {
-        font-size: 48px;
-    }
-    
-    .explore-subtitle {
-        font-size: 36px;
-    }
-    
     .engineering-title {
-        font-size: 28px;
+        font-size: 2.35rem;
     }
     
     .engineering-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .engineering-img {
-        width: 200px;
-        height: 200px;
+        gap: 1.25rem;
+        max-width: 420px;
+        margin: 0 auto;
     }
     
     .get-involved-title {
@@ -717,8 +740,8 @@ ul {
 
 @media (max-width: 480px) {
     .hero-section {
-        aspect-ratio: 16/7;
-        min-height: 40vh;
+        height: 100svh;
+        min-height: 100svh;
     }
 
     .who-are-we-section {
@@ -746,15 +769,6 @@ ul {
         padding: 0 10px;
     }
 
-    .hero-title {
-        font-size: 40px;
-        margin-left: 3%;
-    }
-    
-    .hero-content {
-        padding: 0.5rem;
-    }
-    
     .who-are-we-title {
         font-size: 40px;
     }
@@ -829,13 +843,8 @@ ul {
     }
     
     .engineering-title {
-        font-size: 20px;
-        bottom: 10px;
-    }
-    
-    .engineering-img {
-        width: 180px;
-        height: 180px;
+        font-size: 2rem;
+        bottom: 0.85rem;
     }
     
     .get-involved-title {
